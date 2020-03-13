@@ -1,0 +1,249 @@
+Microsoft Windows [Version 10.0.18362.476]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+
+D:\Microsoft Training\DEVOPS>md Demo
+
+D:\Microsoft Training\DEVOPS>cd Demo
+
+---------------------------------------------------------
+SETS email and name of COMMITED DEVELOPER
+---------------------------------------------------------
+D:\Microsoft Training\DEVOPS\Demo>git config --list
+
+D:\Microsoft Training\DEVOPS\Demo>git config --global user.email "narend.atsinfotech@gmail.com"
+
+D:\Microsoft Training\DEVOPS\Demo>git config --global user.name "narendargentyala"
+
+C:\Users\Narendar Gentyala>git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+rebase.autosquash=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+credential.helper=manager
+user.email=narend.gentyal@gmail.com
+user.name=Narendra Gentyala
+
+
+D:\Microsoft Training\DEVOPS\Demo>echo "#Demo" >> README.md
+
+D:\Microsoft Training\DEVOPS\Demo>type README.md
+"#Demo"
+
+---------------------------------------------------
+GIT LOCAL REPOSITORY INITIALIZATION
+---------------------------------------------------
+D:\Microsoft Training\DEVOPS\Demo>git init
+Initialized empty Git repository in D:/Microsoft Training/DEVOPS/Demo/.git/
+
+-------------------------------------------------------------
+ADD TO LOCAL REPOSITORY STAGING AREA [index]
+-------------------------------------------------------------
+D:\Microsoft Training\DEVOPS\Demo>git add README.md
+
+D:\Microsoft Training\DEVOPS\Demo>git commit -m "first commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Narendar L Gentyala@SHRIYA-PC.(none)')
+
+D:\Microsoft Training\DEVOPS\Demo>git config --global user.email "narend.atsinfotech@gmail.com"
+
+D:\Microsoft Training\DEVOPS\Demo>git config --global user.name "narendargentyala"
+
+D:\Microsoft Training\DEVOPS\Demo>git commit -m "first commit"
+[master (root-commit) 0471c84] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+D:\Microsoft Training\DEVOPS\Demo>git remote add origin https://github.com/narendargentyala/Demos.git
+
+D:\Microsoft Training\DEVOPS\Demo>git push -u origin master
+
+D:\Microsoft Training\DEVOPS\Demo>
+D:\Microsoft Training\DEVOPS\Demo>
+D:\Microsoft Training\DEVOPS\Demo>
+D:\Microsoft Training\DEVOPS\Demo>
+D:\Microsoft Training\DEVOPS\Demo>git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 227 bytes | 113.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/narendargentyala/Demos.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+D:\Microsoft Training\DEVOPS\Demo>git remote rename origin myapp
+
+D:\Microsoft Training\DEVOPS\Demo>git remote -v
+myapp   https://github.com/narendargentyala/Demos.git (fetch)
+myapp   https://github.com/narendargentyala/Demos.git (push)
+
+D:\Microsoft Training\DEVOPS\Demo>git remote rename myapp origin
+
+D:\Microsoft Training\DEVOPS\Demo>git remote -v
+origin  https://github.com/narendargentyala/Demos.git (fetch)
+origin  https://github.com/narendargentyala/Demos.git (push)
+
+D:\Microsoft Training\DEVOPS\Demo>git remote rename origin myapp
+
+D:\Microsoft Training\DEVOPS\Demo>git remote -v
+myapp   https://github.com/narendargentyala/Demos.git (fetch)
+myapp   https://github.com/narendargentyala/Demos.git (push)
+
+D:\Microsoft Training\DEVOPS\Demo>git remote get-url myapp
+https://github.com/narendargentyala/Demos.git
+
+D:\Microsoft Training\DEVOPS\Demo>git branch
+* master
+
+D:\Microsoft Training\DEVOPS\Demo>git branch --list
+* master
+
+D:\Microsoft Training\DEVOPS\Demo>git branch mybranch
+
+D:\Microsoft Training\DEVOPS\Demo>git branch --list
+* master
+  mybranch
+
+D:\Microsoft Training\DEVOPS\Demo>git branch -d mybranch
+Deleted branch mybranch (was 0471c84).
+
+D:\Microsoft Training\DEVOPS\Demo>git branch --list
+* master
+
+D:\Microsoft Training\DEVOPS\Demo>git remote remove myapp
+
+D:\Microsoft Training\DEVOPS\Demo>git remote -v
+
+D:\Microsoft Training\DEVOPS\Demo>git remote add origin https://github.com/narendargentyala/Demos.git
+
+D:\Microsoft Training\DEVOPS\Demo>git remote -v
+origin  https://github.com/narendargentyala/Demos.git (fetch)
+origin  https://github.com/narendargentyala/Demos.git (push)
+
+D:\Microsoft Training\DEVOPS\Demo>git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+D:\Microsoft Training\DEVOPS\Demo>git add .
+
+D:\Microsoft Training\DEVOPS\Demo>git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+D:\Microsoft Training\DEVOPS\Demo>git commit -m "second commit"
+[master 919ca2c] second commit
+ 1 file changed, 60 insertions(+)
+ create mode 100644 GitCommands.txt
+
+D:\Microsoft Training\DEVOPS\Demo>git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+D:\Microsoft Training\DEVOPS\Demo>git push -u origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 792 bytes | 264.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/narendargentyala/Demos.git
+   0471c84..919ca2c  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+D:\Microsoft Training\DEVOPS\Demo>CD..
+
+D:\Microsoft Training\DEVOPS>MD DEMO1
+
+D:\Microsoft Training\DEVOPS>CD DEMO1
+
+D:\Microsoft Training\DEVOPS\DEMO1>git clone https://github.com/narendargentyala/Demos.git
+Cloning into 'Demos'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+
+D:\Microsoft Training\DEVOPS\DEMO1>cd Demos
+
+D:\Microsoft Training\DEVOPS\DEMO1\Demos>git add "project 1"
+
+D:\Microsoft Training\DEVOPS\DEMO1\Demos>git commit -m "Third commit"
+[master fae9978] Third commit
+ 1 file changed, 60 insertions(+)
+ create mode 100644 project 1/GitCommands.txt
+
+D:\Microsoft Training\DEVOPS\DEMO1\Demos>git add *
+
+D:\Microsoft Training\DEVOPS\DEMO1\Demos>git commit -m "Third commit"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+D:\Microsoft Training\DEVOPS\DEMO1\Demos>git commit -a
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+D:\Microsoft Training\DEVOPS\DEMO1\Demos>git diff
+
+D:\Microsoft Training\DEVOPS\DEMO1\Demos>git diff -staged
+error: invalid option: -staged
+
+D:\Microsoft Training\DEVOPS\DEMO1\Demos>git diff --staged
+
+D:\Microsoft Training\DEVOPS\DEMO1\Demos>git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+D:\Microsoft Training\DEVOPS\DEMO1\Demos>git push -u origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 373 bytes | 124.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/narendargentyala/Demos.git
+   919ca2c..fae9978  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+D:\Microsoft Training\DEVOPS\DEMO1\Demos>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+D:\Microsoft Training\DEVOPS\DEMO1\Demos>git status
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+Version Control System
+------------------------------------------------
+Version control is the management of changes to documents, computer programs, large websites and other collections of information
+
+These changes are usually termed as Versions
+
+Advantages of Version Control System
+-------------------------------------------------
+Collaboration
+Storing Versions
+Backup
+Analyze
+
+
+Version Control Systems Tools
+-----------------------------------
+Git
+SubVersion [SVN]
+CVS [Concurrent Version System]
+Mercurial
+
+
+What is Git?
+----------------
+Git is a Distributed Version Control tool that supports distributed non-linear workflows by providing data assurance for developing quality software
+
+Features of Git
+---------------------
+Distributed
+Compatible
+Non linear
+Branching
+Lightweight
+Speed
+Open Source
+Reliable
+Secure
+Economical
+
+
+Git Flow
+-------------
+Local Repo			      Remote Repo
+[Local Machine]			      [RemoteServer]
+[git]				      [github]
+---------------------------------------------------------------------	
+Working Dir -> Staging Area -> Local repo
+	         [index]	
+	git add	->git commit->		git push
+		
+				<-	git pull
+
+
+REMOTE REPOSITORY OR CENTRAL REPOSITORY LINK
+------------------------------------------------------------------
+https://github.com/narendgentyal/Syntel-AtoS-Training-Demos.git		

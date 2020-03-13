@@ -1,0 +1,608 @@
+CREATE LOCAL REPOSITORY
+--------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT
+$ git init
+Initialized empty Git repository in D:/Microsoft Training/DEVOPS/PROJECT/.git/
+
+CONNECTING TO REMOTE REPOSITORY
+---------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git remote add origin "https://github.com/narendargentyala/git-github.git"
+
+PULL FILES FROM REMOTE REPOSITORY
+-----------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git pull origin master
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/narendargentyala/git-github
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+
+
+CREATE edu1.txt FILE IN LOCAL REPOSITORY
+--------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        edu1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+ADD edu1.txt FILE TO STAGING AREA TO index FILE
+--------------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git add edu1.txt
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+CHECK STATUS AFTER ADDING edu1.txt FILE TO STAGING AREA TO index FILE
+----------------------------------------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   edu1.txt
+
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+COMMIT CHANGES of edu1.txt FILE TO LOCAL REPOSITORY
+--------------------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git commit -m "adding first commit in local repo"
+[master c915f9e] adding first commit in local repo
+ 1 file changed, 1 insertion(+)
+ create mode 100644 edu1.txt
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+
+CREATE edu2.txt and edu3.txt IN LOCAL REPOSITORY [WORKING ON MULTIPLE FILES]
+------------------------------------------------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        edu2.txt
+        edu3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+MODIFY edu1.txt FILE
+------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   edu1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        edu2.txt
+        edu3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+
+ADD ALL MODIFIED AND NEWLY ADDED FILES TO STAGING AREA
+------------------------------------------------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git add -A
+
+CHECK STATUS AFTER ADDING
+-------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   edu1.txt
+        new file:   edu2.txt
+        new file:   edu3.txt
+
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+
+COMMIT CHANGES TO LOCAL REPOSITORY [WORKING ON MULTIPLE FILES]
+------------------------------------------------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git commit -a -m "adding 3 files together"
+[master a1b827c] adding 3 files together
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 edu2.txt
+ create mode 100644 edu3.txt
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+SEE LOG CHANGES
+-------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git log
+commit a1b827cd7b6201744b2679ab65001da53046972a (HEAD -> master)
+Author: narendargentyala <narend.atsinfotech@gmail.com>
+Date:   Sun Dec 15 16:15:18 2019 +0530
+
+    adding 3 files together
+
+commit c915f9e5e9379ef43d22a361901167258d647f4a
+Author: narendargentyala <narend.atsinfotech@gmail.com>
+Date:   Sun Dec 15 16:12:05 2019 +0530
+
+    adding first commit in local repo
+
+commit 2ab6c1b3f493110f8291c69072c0c3ce325583f8 (origin/master)
+Author: narendargentyala <58841877+narendargentyala@users.noreply.github.com>
+Date:   Sun Dec 15 16:02:27 2019 +0530
+
+    Initial commit
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+
+WORKING ON BRANCHES
+-----------------------------------
+CREATE BRANCH - firstbranch
+-------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git branch firstbranch
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git branch --list
+  firstbranch
+* master
+
+SWITCH TO BRANCH FROM MASTER BRANCH
+--------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+$ git branch --list
+*  firstbranch
+   master
+
+ADD NEW FILE edu4.txt FILE TO NEWLY CREATED BRANCH
+-----------------------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ git add edu4.txt
+
+COMMIT CHANGES TO NEWLY CREATED BRANCH IN LOCAL REPOSITORY
+-------------------------------------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ git commit -m "making changes in firstbranch"
+[firstbranch 8732b6b] making changes in firstbranch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 edu4.txt
+
+SEE FILES OF BRANCH
+-------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ ls
+edu1.txt  edu2.txt  edu3.txt  edu4.txt  README.md
+
+
+SWITCH TO MASTER
+-------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ git checkout master
+Switched to branch 'master'
+
+SEE FILES
+----------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ ls
+edu1.txt  edu2.txt  edu3.txt  README.md
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+MERGE BRANCH TO MASTER
+------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git merge firstbranch
+Updating a1b827c..8732b6b
+Fast-forward
+ edu4.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 edu4.txt
+
+SEE FILES
+-------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ ls
+edu1.txt  edu2.txt  edu3.txt  edu4.txt  README.md
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+MODYING edu4.txt FILE IN firstbranch
+------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+COMMIT CHANGES
+-------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ git commit -a -m "modifying edu4"
+[firstbranch 97c2519] modifying edu4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+SEE MODIFIED CONTENT OF edu4.txt FILE
+---------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ cat edu4.txt			or 		type edu4.txt
+First Branch First File. Modified in Firstbranch
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+
+SWITCH TO MASTER
+---------------------------
+$ git checkout master
+Switched to branch 'master'
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+MASTER CANT SEE CHANGES
+-------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ cat edu4.txt			or 		type edu4.txt
+First Branch First File
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+MERGE CHANGES OF FIRSTBRANCH WITH MASTER
+-----------------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git merge firstbranch
+Updating 8732b6b..97c2519
+Fast-forward
+ edu4.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+SEE CHANGES
+--------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ cat edu4.txt			or 		type edu4.txt
+First Branch First File. Modified in Firstbranch
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+
+
+UNDERSTANDING REBASING
+----------------------------------------
+SWITCH TO FIRSTBRANCH
+----------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+CREATE edu5.txt and edu6.txt FILE
+---------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ git status
+On branch firstbranch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        edu5.txt
+        edu6.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ADD THEM TO FIRSTBRANCH
+---------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ git add -A
+
+COMMIT FOR REBASING
+----------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ git commit -a -m "adding for rebasing"
+[firstbranch d6abdc5] adding for rebasing
+ 2 files changed, 2 insertions(+)
+ create mode 100644 edu5.txt
+ create mode 100644 edu6.txt
+
+SEE CHANGES
+----------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ ls
+edu1.txt  edu2.txt  edu3.txt  edu4.txt  edu5.txt  edu6.txt  README.md
+
+SWITCH TO MASTER
+----------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ git checkout master
+Switched to branch 'master'
+
+SEE CHANGES
+----------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ ls
+edu1.txt  edu2.txt  edu3.txt  edu4.txt  README.md
+
+SWITCH TO FIRSTBRANCH
+-----------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$
+
+USE REBASE INSTEAD OF MERGE
+----------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ git rebase master
+Current branch firstbranch is up to date.
+
+SWITCH TO MASTER
+----------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ git checkout master
+Switched to branch 'master'
+
+USE REBASE
+-----------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git rebase firstbranch
+First, rewinding head to replay your work on top of it...
+Fast-forwarded master to firstbranch.
+
+SEE CHANGES
+---------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ ls
+edu1.txt  edu2.txt  edu3.txt  edu4.txt  edu5.txt  edu6.txt  README.md
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+
+PUSH OPERATIONS CAN ALSO BE DONE WITH SSH KEY
+----------------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Narendar Gentyala/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Narendar Gentyala/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Narendar Gentyala/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:Hkx7dKagwdCxQh/WyCPyy4n1a3hiLXTaaylhXW7CRts Narendar L Gentyala@SHRIYA-PC
+The key's randomart image is:
++---[RSA 2048]----+
+|    oo++         |
+|  ...==o.        |
+|   o..=.o . o    |
+|    o..=.+ +     |
+|   + B.=S o      |
+|  . B O.Eo       |
+|   o O =.        |
+|    B O          |
+|   . B..         |
++----[SHA256]-----+
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ cat ^C
+
+SEE GENERATED KEY
+----------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ cat /c/Users/"Narendar Gentyala"/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCgOJtINimihiolYuNQaLi1YvkS+cUoDYuMLFcN2cUgZTGw/tANEpcOfXkG60TnO1ITdLKXfe8C1wavnlxm4ew5+A6OnCuWb2yiawItkI9KfjYeRd5jgoAgW3oeKCHTR87BBVmdgXCnIMF9tJxPc23e/St02ajLKOYimZHJRgYnjMonogkCFsAmLo+InomEH85bOFchcm7nPeYe87IJedFwD6HxpPu7+UwDCc+cFARRaTAxXThFD5vqOaq6zuXz5zklzvuJW/KB1U9O/8qAw3ufTVvXV8Ps3v5l3SSm73GASf3+fRl1eTKzbzrJ9kebkh8aF2Q0FYcHmuiy30xMDRdT Narendar L Gentyala@SHRIYA-PC
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+GO TO GITHUB AND CREATE KEY  AND COPY ABOVE KEY AND PASTE IT THERE
+-------------------------------------------------------------------------------------------
+
+FINALLY CONNECT HERE
+-------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ ssh -T git@github.com
+Warning: Permanently added the RSA host key for IP address '13.234.176.102' to the list of known hosts.
+Hi narendargentyala! You've successfully authenticated, but GitHub does not provide shell access.
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+PUSH BRANCHES TO CENTRAL REPOSITORY
+-------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ git push origin firstbranch
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (18/18), 1.43 KiB | 243.00 KiB/s, done.
+Total 18 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), done.
+remote:
+remote: Create a pull request for 'firstbranch' on GitHub by visiting:
+remote:      https://github.com/narendargentyala/git-github/pull/new/firstbranch
+remote:
+To https://github.com/narendargentyala/git-github.git
+ * [new branch]      firstbranch -> firstbranch
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$
+
+
+PUSH TO MASTER BRANCH TO CENTRAL REPOSITORY
+-------------------------------------------------
+SWITCH TO MASTER
+---------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (firstbranch)
+$ git checkout master
+Switched to branch 'master'
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/narendargentyala/git-github.git
+   2ab6c1b..d6abdc5  master -> master
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+
+REVERT UNDERSTANDING
+-------------------------------------
+CREATE revert.txt FILE AND ADD IT TO STAGING AREA
+---------------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git add revert.txt
+
+COMMIT 
+-------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git commit -m "revert 1"
+[master dcf3bdb] revert 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 revert.txt
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+MODIFY THE FILE AND COMMIT
+------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git commit -a -m "revert2"
+[master 5863e09] revert2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+SEE CHANGES OF revert.txt FILE
+--------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ cat revert.txt
+Hello! There
+
+SEE LOG
+------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git log
+commit 5863e09e4e59606b52a372767f986cafe5d0850f (HEAD -> master)
+Author: narendargentyala <narend.atsinfotech@gmail.com>
+Date:   Sun Dec 15 16:59:18 2019 +0530
+
+    revert2
+
+commit dcf3bdbe1b700369984b27336454965f1b6b4620
+Author: narendargentyala <narend.atsinfotech@gmail.com>
+Date:   Sun Dec 15 16:57:14 2019 +0530
+
+    revert 1
+
+commit d6abdc5f7f66be9106f9ef25230bd480d9f0016a (origin/master, origin/firstbranch, firstbranch)
+Author: narendargentyala <narend.atsinfotech@gmail.com>
+Date:   Sun Dec 15 16:38:37 2019 +0530
+
+    adding for rebasing
+
+commit 97c251959d40ed032964bbb49e795ce74e22ccd0
+Author: narendargentyala <narend.atsinfotech@gmail.com>
+Date:   Sun Dec 15 16:31:24 2019 +0530
+
+    modifying edu4
+
+commit 8732b6b2419563f961021453d3f31cb2bf9bd847
+Author: narendargentyala <narend.atsinfotech@gmail.com>
+Date:   Sun Dec 15 16:25:07 2019 +0530
+
+    making changes in firstbranch
+
+commit a1b827cd7b6201744b2679ab65001da53046972a
+Author: narendargentyala <narend.atsinfotech@gmail.com>
+Date:   Sun Dec 15 16:15:18 2019 +0530
+
+    adding 3 files together
+
+commit c915f9e5e9379ef43d22a361901167258d647f4a
+Author: narendargentyala <narend.atsinfotech@gmail.com>
+Date:   Sun Dec 15 16:12:05 2019 +0530
+
+    adding first commit in local repo
+
+commit 2ab6c1b3f493110f8291c69072c0c3ce325583f8
+Author: narendargentyala <58841877+narendargentyala@users.noreply.github.com>
+Date:   Sun Dec 15 16:02:27 2019 +0530
+
+    Initial commit
+:B
+BBBBBBBB
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+
+bash: OB: command not found
+
+REVERT CHANGES TO INITIAL CHANGES [Copy first 8 digits of revert1] and DO CHECKOUT
+----------------------------------------------------------------------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git checkout dcf3bdbe revert.txt
+Updated 1 path from d2cb6d7
+
+SEE CHANGES
+----------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ cat revert.txt
+Hello!
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$
+
+SEE CHANGES WITH GIT DIFF
+----------------------------------------
+Narendar L Gentyala@SHRIYA-PC MINGW64 /d/Microsoft Training/DEVOPS/PROJECT (master)
+$ git diff revert.txt
+diff --git a/revert.txt b/revert.txt
+index 05a682b..dfc45e8 100644
+--- a/revert.txt
++++ b/revert.txt
+@@ -1 +1 @@
+-Hello!
+\ No newline at end of file
++Hello! THERE
+\ No newline at end of file
+
+Narendar L Gentyala@SHRIYA-PC 
